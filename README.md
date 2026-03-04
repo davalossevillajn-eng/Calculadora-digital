@@ -67,6 +67,12 @@ Crear un codigo de calculadora que contenga:
 
 ![Menú Conversor de Datos](11166.jpg)
 
+<sub>Este ejemplo muestra lel menu principal con los diferentes controles, abajo de ella se encuentra el historial con lo que has echo</sub>
+
+![Menú Conversor de Datos](11164.jpg)
+
+<sub>Este ejemplo muestra el proceso de resolución de una suma básica al ir seleccionando controles y escribiendo números lo resolveras</sub>
+
 
 
 ### Tecnologias
