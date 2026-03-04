@@ -251,6 +251,44 @@ def limpiar_historial():
     print("Historial borrado correctamente")
 
 # ============================================
+# GUARDAR HISTORIAL EN ARCHIVO
+# ============================================
+
+def guardar_historial():
+    try:
+        if not os.path.exists(CARPETA_DATOS):
+            os.makedirs(CARPETA_DATOS)
+
+        with open(ARCHIVO_HISTORIAL, "w", encoding="utf-8") as archivo:
+            for operacion in historial:
+                archivo.write(operacion + "\n")
+
+        print("Historial guardado en:", ARCHIVO_HISTORIAL)
+
+    except Exception as e:
+        print("Error al guardar historial:", e)
+
+
+# ============================================
+# CARGAR HISTORIAL DESDE ARCHIVO
+# ============================================
+
+def cargar_historial():
+    try:
+        if os.path.exists(ARCHIVO_HISTORIAL):
+            with open(ARCHIVO_HISTORIAL, "r", encoding="utf-8") as archivo:
+                for linea in archivo:
+                    agregar_al_historial(linea.strip())
+
+            print("Historial cargado correctamente")
+
+    except Exception as e:
+        print("Error al cargar historial:", e)
+
+#Llamar a la función aquí
+cargar_historial()
+
+# ============================================
 # MENU CONVERSOR DE DATOS
 # ============================================
 
