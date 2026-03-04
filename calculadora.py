@@ -86,6 +86,79 @@ def gb_a_mb(gb):
     return gb * 1024
 
 # ============================================
+# FUNCIONES DE SISTEMAS NUMERICOS
+# ============================================
+
+# Decimal a Binario (ALGORITMO MANUAL)
+def decimal_a_binario(decimal):
+
+    decimal = int(decimal)
+
+    if decimal == 0:
+        return "0"
+
+    binario = ""
+
+    while decimal > 0:
+        residuo = decimal % 2
+        binario = str(residuo) + binario
+        decimal = decimal // 2
+
+    return binario
+
+
+# Binario a Decimal
+def binario_a_decimal(binario):
+
+    decimal = 0
+    potencia = 0
+
+    for digito in reversed(binario):
+
+        decimal += int(digito) * (2 ** potencia)
+        potencia += 1
+
+    return decimal
+
+
+# Decimal a Hexadecimal
+def decimal_a_hexadecimal(decimal):
+
+    decimal = int(decimal)
+
+    if decimal == 0:
+        return "0"
+
+    hex_chars = "0123456789ABCDEF"
+    hexadecimal = ""
+
+    while decimal > 0:
+        residuo = decimal % 16
+        hexadecimal = hex_chars[residuo] + hexadecimal
+        decimal = decimal // 16
+
+    return hexadecimal
+
+
+# Hexadecimal a Decimal
+def hexadecimal_a_decimal(hexadecimal):
+
+    hex_chars = "0123456789ABCDEF"
+
+    hexadecimal = hexadecimal.upper()
+
+    decimal = 0
+    potencia = 0
+
+    for digito in reversed(hexadecimal):
+
+        valor = hex_chars.index(digito)
+        decimal += valor * (16 ** potencia)
+        potencia += 1
+
+    return decimal
+
+# ============================================
 # MENU CALCULADORA BASICA
 # ============================================
 
@@ -201,6 +274,53 @@ def menu_conversion():
     
     print("Resultado:", resultado)
     
+    fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
+
+# ============================================
+# MENU SISTEMAS NUMERICOS
+# ============================================
+
+def menu_sistemas():
+
+    print("\n--- SISTEMAS NUMERICOS ---")
+    print("1. Decimal a Binario")
+    print("2. Binario a Decimal")
+    print("3. Decimal a Hexadecimal")
+    print("4. Hexadecimal a Decimal")
+
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+
+        valor = validar_numero("Ingrese número decimal: ")
+        resultado = decimal_a_binario(valor)
+        operacion = f"{int(valor)} decimal a binario"
+
+    elif opcion == "2":
+
+        valor = input("Ingrese número binario: ")
+        resultado = binario_a_decimal(valor)
+        operacion = f"{valor} binario a decimal"
+
+    elif opcion == "3":
+
+        valor = validar_numero("Ingrese número decimal: ")
+        resultado = decimal_a_hexadecimal(valor)
+        operacion = f"{int(valor)} decimal a hexadecimal"
+
+    elif opcion == "4":
+
+        valor = input("Ingrese número hexadecimal: ")
+        resultado = hexadecimal_a_decimal(valor)
+        operacion = f"{valor} hexadecimal a decimal"
+
+    else:
+        print("Opción inválida")
+        return
+
+    print("Resultado:", resultado)
+
     fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
