@@ -215,6 +215,18 @@ def menu_calculadora():
 # MOSTRAR HISTORIAL
 # ============================================
 
+#Agregar cosas al historial
+def agregar_al_historial(operacion):
+
+    historial.append(operacion)
+
+    # Limitar a 10 elementos
+    if len(historial) > 10:
+        historial.pop(0)
+
+# Lista para guardar historial
+historial = []
+
 def mostrar_historial():
     
     print("\n--- HISTORIAL ---")
@@ -225,6 +237,13 @@ def mostrar_historial():
     else:
         for item in historial:
             print(item)
+
+#Opción para limpiar historial
+def limpiar_historial():
+
+    historial.clear()
+
+    print("Historial borrado correctamente")
 
 # ============================================
 # MENU CONVERSOR DE DATOS
