@@ -63,8 +63,11 @@ Crear un codigo de calculadora que contenga:
 
 > Si no has ningun calculo el sistema te avisara 
 
-### Ejempl
-![**Ejemplo**](
+### Ejemplos
+
+![Menú Conversor de Datos](11166.jpg)
+
+
 
 ### Tecnologias
 
