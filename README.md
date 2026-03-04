@@ -78,4 +78,8 @@ Crear un codigo de calculadora que contenga:
 ### Tecnologias
 
 Para la realizacion de este proyecto se uso el lenguaje python en su version 3.11 o superior 🐍
+
+### Licensia usada
+
+- Para este proyecto usamos la licencia MIT 
   
