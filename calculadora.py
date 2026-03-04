@@ -1,4 +1,6 @@
 import csv
+from datetime import datetime
+
 print("Calculadora digital-Proyecto de progra ")
 # =====================================
 # =======
@@ -56,6 +58,32 @@ def modulo(a, b):
 def potencia(a, b):
     return a ** b
 
+# ============================================
+# FUNCIONES DE CONVERSION DE DATOS
+# ============================================
+
+def bytes_a_kb(bytes):
+    return bytes / 1024
+
+
+def kb_a_bytes(kb):
+    return kb * 1024
+
+
+def kb_a_mb(kb):
+    return kb / 1024
+
+
+def mb_a_kb(mb):
+    return mb * 1024
+
+
+def mb_a_gb(mb):
+    return mb / 1024
+
+
+def gb_a_mb(gb):
+    return gb * 1024
 
 # ============================================
 # MENU CALCULADORA BASICA
@@ -125,6 +153,56 @@ def mostrar_historial():
         for item in historial:
             print(item)
 
+# ============================================
+# MENU CONVERSOR DE DATOS
+# ============================================
+
+def menu_conversion():
+    
+    print("\n--- CONVERSOR DE UNIDADES DE DATOS ---")
+    print("1. Bytes a Kilobytes")
+    print("2. Kilobytes a Bytes")
+    print("3. Kilobytes a Megabytes")
+    print("4. Megabytes a Kilobytes")
+    print("5. Megabytes a Gigabytes")
+    print("6. Gigabytes a Megabytes")
+    
+    opcion = input("Seleccione una opción: ")
+    
+    valor = validar_numero("Ingrese el valor: ")
+    
+    if opcion == "1":
+        resultado = bytes_a_kb(valor)
+        operacion = f"{valor} Bytes a KB"
+        
+    elif opcion == "2":
+        resultado = kb_a_bytes(valor)
+        operacion = f"{valor} KB a Bytes"
+        
+    elif opcion == "3":
+        resultado = kb_a_mb(valor)
+        operacion = f"{valor} KB a MB"
+        
+    elif opcion == "4":
+        resultado = mb_a_kb(valor)
+        operacion = f"{valor} MB a KB"
+        
+    elif opcion == "5":
+        resultado = mb_a_gb(valor)
+        operacion = f"{valor} MB a GB"
+        
+    elif opcion == "6":
+        resultado = gb_a_mb(valor)
+        operacion = f"{valor} GB a MB"
+        
+    else:
+        print("Opción inválida")
+        return
+    
+    print("Resultado:", resultado)
+    
+    fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
 # ============================================
 # MENU PRINCIPAL
