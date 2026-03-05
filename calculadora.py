@@ -210,7 +210,8 @@ def menu_calculadora():
     print("Resultado:", resultado)
     
     # guardar en historial
-    historial.append(f"{operacion} = {resultado}")
+    fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
 
 # ============================================
