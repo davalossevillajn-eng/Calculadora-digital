@@ -6,9 +6,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CARPETA_DATOS = os.path.join(BASE_DIR, "datos")
 ARCHIVO_HISTORIAL = os.path.join(CARPETA_DATOS, "historial.txt")
 
-print("Calculadora digital-Proyecto de progra ")
+
 # =====================================
-# =======
 # CALCULADORA DIGITAL
 # Proyecto de Programación
 # ============================================
