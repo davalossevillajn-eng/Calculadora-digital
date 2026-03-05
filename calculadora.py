@@ -13,9 +13,6 @@ print("Calculadora digital-Proyecto de progra ")
 # Proyecto de Programación
 # ============================================
 
-# Lista para guardar historial
-historial = []
-
 
 # ============================================
 # FUNCION: validar numero
@@ -396,24 +393,36 @@ def menu_principal():
         
         print("\n====== CALCULADORA DIGITAL ======")
         print("1. Calculadora básica")
-        print("2. Ver historial")
-        print("3. Salir")
-        
+        print("2. Conversor de datos")
+        print("3. Sistemas numericos")
+        print("4. Ver historial")
+        print("5. Borrar el historial")
+        print("6. Salir")
+
         opcion = input("Seleccione una opción: ")
         
         if opcion == "1":
             menu_calculadora()
             
         elif opcion == "2":
-            mostrar_historial()
+            menu_conversion()
             
         elif opcion == "3":
+            menu_sistemas()
+        
+        elif opcion == "4":
+            mostrar_historial()
+        
+        elif opcion == "5":
+            limpiar_historial()
+
+        elif opcion == "6":
+            guardar_historial()
             print("Saliendo del programa...")
             break
             
         else:
             print("Opción inválida")
-
 
 # ============================================
 # INICIAR PROGRAMA
