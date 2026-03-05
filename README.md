@@ -16,8 +16,7 @@ Crear un codigo de calculadora que contenga:
 | Nombre | Rol |
 | :--- | :--- |
 | **Axel Jeydan Andrde Peña**| Encargado del desarrollo del menu principal |
-| **Jose Nicolas Davalos Sevilla** | Encargado de la conversiones |
-| **Valeria Carolina Mendez Cervantes** | Encargada del desarrollo de calculos matematicos |
+| **Jose Nicolas Davalos Sevilla** | Encargado de la conversiones y calculos matematicos |
 | **Francia Amayrani Ruiz Rodriguez**| Encargada del funcionamiento del sistema historial |
 
 ### Caracteristicas
