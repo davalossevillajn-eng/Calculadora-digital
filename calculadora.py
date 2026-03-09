@@ -29,6 +29,8 @@ def validar_numero(texto):
             print("Error: Ingrese un número válido.")
 
 
+##En esta funcion el objetivo es evitarue el programa no se congele o falle si el usuario escribe letras en lugar de números.
+
 # ============================================
 # FUNCIONES DE CALCULADORA BASICA
 # ============================================
@@ -59,6 +61,11 @@ def modulo(a, b):
 def potencia(a, b):
     return a ** b
 
+## En este bloque de funciones se encuentran el funcionamiento de las funciones basicas
+## sumar(a, b) / restar(a, b) / multiplicar(a, b): Hacen exactamente lo que su nombre indica, tomando dos números y devolviendo el resultado.
+## dividir(a, b): Divide el primer número entre el segundo y evita que dividas entre 0
+## modulo(a, b): Devuelve el "residuo" o lo que sobra de una división entera potencia (a, b): Eleva el primer número a la potencia del segundo
+
 # ============================================
 # FUNCIONES DE CONVERSION DE DATOS
 # ============================================
@@ -85,6 +92,8 @@ def mb_a_gb(mb):
 
 def gb_a_mb(gb):
     return gb * 1024
+
+## Funciones que transforman unidades haciendolas mas grandes o pequeñas y viseversa multiplicando o diviendo por 1024
 
 # ============================================
 # FUNCIONES DE SISTEMAS NUMERICOS
@@ -159,6 +168,14 @@ def hexadecimal_a_decimal(hexadecimal):
 
     return decimal
 
+
+## Todos estos bloques de funciones se encargan de convertir distintas bases de numeros matematicos 
+## decimal_a_binario(decimal): Toma un número normal (base 10) y lo divide entre 2 repetidamente para construir una cadena de ceros y unos.
+## binario_a_decimal(binario): Hace lo contrario; toma ceros y unos, y usando potencias de 2, los convierte de nuevo a un número normal.
+## decimal_a_hexadecimal(decimal): Similar a la conversión a binario, pero dividiendo entre 16 y usando letras de la 'A' a la 'F' para los residuos mayores a 9.
+## hexadecimal_a_decimal(hexadecimal): Traduce códigos con números y letras (base 16) a un valor decimal normal usando potencias de 16.
+
+
 # ============================================
 # MENU CALCULADORA BASICA
 # ============================================
@@ -212,6 +229,9 @@ def menu_calculadora():
     fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
+## Es la pantalla de inicio que te mostrara todas las opciones que puedes hacer 
+## validar_numero te pedira los numeros que deseas calcular
+
 
 # ============================================
 # MOSTRAR HISTORIAL
@@ -247,6 +267,11 @@ def limpiar_historial():
 
     print("Historial borrado correctamente")
 
+## Este apartado de funciones te explica el proceso para que se pueda guaradar el historial de tus operaciones
+## agregar_al_historial(operacion): Mete la nueva operación en una lista.
+## mostrar_historial(): Revisa la lista y la imprime línea por línea en la pantalla. Si está vacía, te avisa.
+## limpiar_historial(): Borra absolutamente todo lo que esté guardado en esa lista de memoria.
+
 # ============================================
 # GUARDAR HISTORIAL EN ARCHIVO
 # ============================================
@@ -265,6 +290,7 @@ def guardar_historial():
     except Exception as e:
         print("Error al guardar historial:", e)
 
+## Por medio de las otras funciones  ya explicadas se toma el resultado y se guarda permanentemente en un archivo de texto (historial.txt). 
 
 # ============================================
 # CARGAR HISTORIAL DESDE ARCHIVO
@@ -284,6 +310,9 @@ def cargar_historial():
 
 #Llamar a la función aquí
 cargar_historial()
+
+## Esta funcion, busca el archivo historial.txt en tu computadora; si lo encuentra, lee las operaciones pasadas y las mete de vuelta en 
+## la lista del programa para que no pierdas tus cálculos anteriores.
 
 # ============================================
 # MENU CONVERSOR DE DATOS
@@ -336,6 +365,8 @@ def menu_conversion():
     fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
+## Muestra la lista de unidades de memoria (Bytes, KB, MB, GB), te pide el valor a convertir, realiza el cálculo, lo muestra y lo anota en el historial.
+
 # ============================================
 # MENU SISTEMAS NUMERICOS
 # ============================================
@@ -383,6 +414,9 @@ def menu_sistemas():
     fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     agregar_al_historial(f"{fecha} | {operacion} = {resultado}")
 
+## Muestra ahora los conversores de sistemas numericos le pregunta qué conversión quieres,
+## pide el dato, llama al algoritmo manual correspondiente y registra lo que hizo.
+
 # ============================================
 # MENU PRINCIPAL
 # ============================================
@@ -424,9 +458,13 @@ def menu_principal():
         else:
             print("Opción inválida")
 
+## El menu principal que tendra agrupado a todos los submenus,  con (while True) para mantener la calculadora encendida
+## solo se detiene y cierra el programa si eliges la opción "6"
+
 # ============================================
 # INICIAR PROGRAMA
 # ============================================
 
 menu_principal()
 #CSV import
+
